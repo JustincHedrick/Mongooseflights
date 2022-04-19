@@ -8,8 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index', flightsCtrl.index);
-router.post('/', flightsCtrl.create);
 router.get('/new', flightsCtrl.new);
+router.get('/:id', flightsCtrl.show);
+router.post('/', flightsCtrl.create);
 
 
 module.exports = router;

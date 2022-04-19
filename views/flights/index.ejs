@@ -21,7 +21,10 @@
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
+          <td>
+            <%= f.departs %>
+            <a href="/flights/<%= f._id %>">Details</a>
+          </td>
         </tr>
       <% }) %>
     </tbody>
