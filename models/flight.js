@@ -25,11 +25,11 @@ const flightSchema = new Schema({
     flightNo: {
         type: Number,
         required: true,
-        min: 3,
+        min: 10,
     },
     departs: {
         type: Date,
-        default: Date.now() + 365*24*60*60000
+        default: Date.now() + 365*24*60*60000,
     },
     destinations: [destinationSchema],
 });
