@@ -9,22 +9,22 @@ module.exports = {
 };
 
 function show(req, res) {
-  Flight.findById(req.params.id, function(err, flight) { 
-    Ticket.find(
-        {flight: flight._id}, 
-        function(err, tickets) {
-        res.render('flights/show', { 
-        title: 'Flight Detail', flight, tickets 
-       });
-    })
-  });
+    Flight.findById(req.params.id, function(err, flight) {
+        Ticket.find({flightId: flight._id}, 
+            function(err, tickets) {
+            res.render('flights/show', 
+            { flight, tickets});
+        }); 
+    });
 }
+
 
 function create(req, res) {
     const flight = new Flight(req.body);
     flight.save(function(err){
         if (err) return res.render('flights/new');
-        res.redirect('/flights/index');
+        console.log(flight);
+        res.redirect('/flights');
     });
 }
 

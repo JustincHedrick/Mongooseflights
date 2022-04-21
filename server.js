@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 
 require('dotenv').config();
-// connect to the database from mongoose
 require('./config/database');
+
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 var destinationsRouter = require('./routes/destinations')
